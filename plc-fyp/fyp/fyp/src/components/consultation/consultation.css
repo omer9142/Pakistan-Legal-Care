@@ -1,0 +1,143 @@
+.consultation-section {
+  padding: 50px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.consultation-container {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  gap: 30px;
+}
+
+.consultation-left {
+  flex: 1;
+}
+
+.consultation-left .logo-image {
+  max-width: 100px;
+  margin-bottom: 20px;
+}
+
+.consultation-left h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.consultation-left .mini-text {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.consultation-right {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.consultation-form input,
+.consultation-form select,
+.consultation-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.consultation-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #6b3910;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.consultation-form button:hover {
+  background-color: #555;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .consultation-section {
+    padding: 40px 20px; /* Adjust padding for medium screens */
+  }
+
+  .consultation-container {
+    flex-direction: column; /* Stack elements vertically */
+    gap: 20px; /* Reduce gap */
+  }
+
+  .consultation-left h2 {
+    font-size: 1.8rem; /* Adjust font size for smaller screens */
+  }
+
+  .consultation-left .mini-text {
+    font-size: 0.9rem; /* Smaller text for medium screens */
+  }
+
+  .consultation-right {
+    padding: 25px; /* Reduced padding */
+  }
+}
+
+@media (max-width: 768px) {
+  .consultation-section {
+    padding: 30px 15px; /* Even smaller padding */
+  }
+
+  .consultation-left h2 {
+    font-size: 1.6rem; /* Smaller heading */
+  }
+
+  .consultation-left .mini-text {
+    font-size: 0.8rem; /* Smaller mini-text */
+  }
+
+  .consultation-form button {
+    font-size: 0.9rem; /* Smaller button text */
+  }
+
+  .consultation-right {
+    padding: 20px; /* Further reduced padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .consultation-section {
+    padding: 15px 15px; /* Even smaller padding */
+  }
+  .consultation-form input{
+    width: 90%;
+  }
+  .consultation-form textarea{
+    width: 90%;
+  }
+  .consultation-form select{
+    width: 96%;
+  }
+  .consultation-left h2 {
+    font-size: 1.2rem; /* Further smaller heading */
+  }
+
+  .consultation-left .mini-text {
+    font-size: 0.5rem; /* Even smaller text */
+  }
+
+  .consultation-form button {
+    font-size: 0.8rem; /* Even smaller button text */
+  }
+
+  .consultation-right {
+    padding: 15px; /* Minimal padding for small screens */
+  }
+}

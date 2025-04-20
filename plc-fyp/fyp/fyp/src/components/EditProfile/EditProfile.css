@@ -1,0 +1,142 @@
+/* Background image for the entire page */
+.edit-profile-container {
+  max-width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* White box for the profile form */
+.profile-box {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 50vh;
+  max-width: 800px;
+  text-align: center;
+}
+
+/* Form Fields Styling */
+.edit-profile-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+.edit-profile-container label {
+  display: block;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  text-align: left;
+  font-size: 16px;
+  color: #604B33;
+}
+
+.edit-profile-container input,
+.edit-profile-container textarea {
+  width: 95%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background: #f9f9f9;
+}
+
+.edit-profile-container textarea {
+  resize: vertical;
+  height: 60px;
+}
+
+.license-card-image {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin: 10px 0;
+  border: 2px solid #604B33;
+}
+
+.edit-profile-container button {
+  width: 100%;
+  padding: 12px;
+  background: #604B33;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.edit-profile-container button:hover {
+  background: #4d3a26;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Style for the password input in the Verify Password step */
+.verify-password-input {
+  width: 20%; /* Adjust this value to make it narrower or wider */
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .edit-profile-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .edit-profile-container h2 {
+    font-size: 22px;
+  }
+
+  .edit-profile-container label {
+    font-size: 14px;
+  }
+
+  .edit-profile-container input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .edit-profile-container button {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .edit-profile-container {
+    width: 100%;
+    margin: 30px auto;
+    padding: 15px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .edit-profile-container h2 {
+    font-size: 20px;
+  }
+
+  .edit-profile-container label {
+    font-size: 13px;
+  }
+
+  .edit-profile-container input {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .edit-profile-container button {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

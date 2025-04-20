@@ -1,0 +1,210 @@
+.attorney-detail {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 60vh; 
+    width: 300vh;  
+    padding: 40px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    gap: 60px;
+}
+
+.attorney-image {
+    flex: 1;
+    text-align: center;
+}
+
+.attorney-image img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.attorney-info {
+    flex: 2;
+    padding: 10px 20px;
+}
+
+.attorney-info h2 {
+    font-size: 28px;
+    color: #2c2c2c;
+    margin-bottom: 10px;
+}
+
+.attorney-info p {
+    font-size: 16px;
+    color: #4f4f4f;
+    margin: 6px 0;
+    line-height: 1.5;
+}
+
+.attorney-info strong {
+    color: #222;
+    font-weight: 600;
+}
+
+.hire-button,
+.modal-content button {
+    background-color: #604B33;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hire-button:hover,
+.modal-content button:hover {
+    background-color: #4F3D28;
+    transform: scale(1.03);
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 20, 20, 0.65);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #ffffff, #f2f2f2);
+    padding: 35px 30px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    text-align: left;
+    position: relative;
+    animation: fadeIn 0.35s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.modal-content h3 {
+    font-size: 24px;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-content input:focus,
+.modal-content select:focus,
+.modal-content textarea:focus {
+    border-color: #604B33;
+    box-shadow: 0 0 5px rgba(96, 75, 51, 0.3);
+    outline: none;
+}
+
+.modal-content button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #333;
+}
+
+.success-message {
+    color: #28a745;
+    font-weight: 600;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 16px;
+}
+
+
+@keyframes fadeIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@media (max-width: 768px) {
+    .attorney-detail {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 20px;
+    }
+
+    .attorney-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .attorney-info {
+        padding: 10px 0;
+    }
+
+    .modal-content {
+        max-width: 90%;
+        padding: 25px 20px;
+    }
+
+    .modal-content h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .attorney-info h2 {
+        font-size: 22px;
+    }
+
+    .attorney-info p {
+        font-size: 14px;
+    }
+
+    .hire-button,
+    .modal-content button {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+}

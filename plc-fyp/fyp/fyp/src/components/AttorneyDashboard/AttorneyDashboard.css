@@ -1,0 +1,190 @@
+/* General Styling */
+.dashboard-container {
+    background: black;
+    min-height: 100vh;
+    padding: 20px;
+    color: white;
+}
+
+/* Overview Box */
+.overview-box {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.number {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.respond {
+    color: brown;
+}
+
+/* Requests Box */
+.requests-box {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    color: black;
+}
+
+/* Requests Header */
+.requests-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+/* Menu Button */
+.menu-btn {
+    background: #444;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Issue Column */
+.issue {
+    width: 40%;
+}
+
+/* Buttons */
+.view-btn {
+    background: brown;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Respond Button */
+.responded-btn {
+    background: blue;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Disabled View Button */
+.view-btn:disabled {
+    background: #999;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Completed Case - Green Button Even if Disabled */
+.view-btn.completed {
+    background-color: rgb(167, 243, 167) !important;
+    color: white;
+    opacity: 1;
+    cursor: not-allowed;
+}
+
+/* Tooltip for Disabled View Button */
+/* .view-btn[disabled]:hover::after {
+    content: "Case not available";
+    position: absolute;
+    background: #222;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    top: -30px;
+    left: 0;
+    white-space: nowrap;
+    z-index: 1;
+} */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stats {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .requests-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    th, td {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-container {
+        padding: 10px;
+    }
+
+    .overview-box,
+    .requests-box {
+        padding: 10px;
+    }
+
+    .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .number {
+        font-size: 20px;
+    }
+
+    .view-btn,
+    .responded-btn {
+        width: 100%;
+        text-align: center;
+    }
+}

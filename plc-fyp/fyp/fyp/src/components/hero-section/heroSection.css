@@ -1,0 +1,98 @@
+.hero-section {
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    opacity: 0.985;
+    padding: 0 20px; /* Added padding for smaller screens */
+}
+/* Style when there's only one button */
+.single-button {
+    margin-left: 0;
+    width: 60%;
+    max-width: 300px;
+}
+
+/* Adjusting hero-content for smaller screens */
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Highlight color for important text */
+.hero-content .highlight {
+    color: #f0a500;
+}
+
+/* Button Styles */
+.button-primary {
+    background-color: #6b3910;
+    color: #fff;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease-in;
+    margin-left: 30px;
+}
+
+/* Button Hover Effect */
+.button-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+    background-color: #7c6243;
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .button-primary {
+        padding: 0.8rem 2rem; /* Slightly smaller button */
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .button-primary {
+        padding: 0.7rem 1.8rem; /* Further reduce padding for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 70vh; /* Decrease height for mobile */
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem; /* Smaller text for smaller devices */
+    }
+
+    .button-primary {
+        padding: 0.6rem 1.5rem; /* Smaller button */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 60vh; /* Further decrease height on very small screens */
+    }
+
+    .hero-content h1 {
+        font-size: 1.6rem; /* Ensure the text doesn't overflow */
+    }
+
+    .button-primary {
+        padding: 0.5rem 1.3rem; /* Very small button on small screens */
+    }
+}

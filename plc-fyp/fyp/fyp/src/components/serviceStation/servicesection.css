@@ -1,0 +1,81 @@
+.services-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+/* Title Styles */
+.services-section h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Services Container Grid Layout */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Service Card Styles */
+.service-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover Effect for Service Card */
+.service-card:hover {
+    transform: translateY(-5px);
+    background-color: black;
+    color: white;
+}
+
+/* Icon in the Service Card */
+.service-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+    }
+
+    .services-section h2 {
+        font-size: 1.8rem; /* Slightly smaller title */
+    }
+}
+
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: 1fr; /* Single column for small screens */
+    }
+
+    .services-section h2 {
+        font-size: 1.6rem; /* Smaller title for mobile */
+    }
+
+    .service-card {
+        padding: 1.2rem; /* Slightly smaller padding for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .services-section {
+        padding: 3rem 1rem; /* Adjust padding on very small screens */
+    }
+
+    .services-section h2 {
+        font-size: 1.4rem; /* Even smaller title for very small screens */
+    }
+
+    .service-card {
+        padding: 1rem; /* Reduced padding for very small screens */
+    }
+}

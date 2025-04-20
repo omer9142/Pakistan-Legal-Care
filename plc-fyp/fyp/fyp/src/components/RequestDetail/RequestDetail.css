@@ -1,0 +1,131 @@
+.request-detail-page {
+  background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.page-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.detail-container {
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.detail-container p {
+  margin: 10px 0;
+  color: #333333;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.action-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.accept-btn, .reject-btn, .complete-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.accept-btn {
+  background: #333333;
+  color: white;
+  margin-right: 10px;
+}
+
+.reject-btn {
+  background: #f5f5f5;
+  color: #333333;
+  border: 1px solid #333333;
+}
+
+.complete-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  background: #28a745;
+  color: white;
+  margin-top: 10px;
+}
+
+.complete-btn:hover {
+  background: #218838;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+.footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-message {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popup-message p {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.popup-message button {
+  background: #218838;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.popup-message button:hover {
+  background: #218838;
+}
+
+/* Hide the content behind popup */
+.popup-active .page-content {
+  display: none;
+}

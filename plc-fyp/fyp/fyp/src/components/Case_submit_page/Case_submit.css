@@ -1,0 +1,56 @@
+.case-submit-page {
+  width: 100%;
+  height: 100vh; /* Make it full height */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+}
+
+.case-submit-container {
+  background: #000;
+  color: white;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  
+}
+
+.case-submit-container h2 {
+  text-align: center;
+}
+
+.case-submit-container form {
+  width: 100%;
+  max-width: 500px;
+}
+
+.case-submit-container input,
+.case-submit-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #555;
+  background: #222;
+  color: white;
+}
+
+.case-submit-container textarea {
+  height: 100px;
+  resize: none;
+}
+
+.case-submit-container button {
+  background: brown;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}

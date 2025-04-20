@@ -1,0 +1,153 @@
+.testimonials-section {
+  text-align: center;
+  padding: 50px;
+  background-color: #f9f9f9;
+}
+
+.testimonials-section h2 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.testimonials-section .mini-heading {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  justify-content: center;
+}
+
+.testimonial-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px;
+  max-width: 350px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.testimonial-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.testimonial-image {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-name {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .testimonials-section h2 {
+    font-size: 1.8rem; /* Slightly smaller title */
+  }
+
+  .testimonials-section .mini-heading {
+    font-size: 0.9rem; /* Slightly smaller mini-heading */
+  }
+
+  .carousel-container {
+    gap: 15px; /* Reduced gap between cards */
+  }
+
+  .testimonial-card {
+    padding: 30px; /* Reduced padding for smaller screens */
+    max-width: 300px; /* Slightly smaller max-width */
+  }
+
+  .testimonial-text {
+    font-size: 1rem; /* Slightly smaller text */
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 40px 20px; /* Reduced padding for smaller screens */
+  }
+
+  .testimonials-section h2 {
+    font-size: 1.6rem; /* Smaller title for mobile */
+  }
+
+  .testimonials-section .mini-heading {
+    font-size: 0.8rem; /* Smaller mini-heading */
+  }
+
+  .carousel-container {
+    gap: 10px; /* Reduced gap between cards */
+  }
+
+  .testimonial-card {
+    padding: 20px; /* Reduced padding further */
+    max-width: 270px; /* Smaller max-width */
+  }
+
+  .testimonial-text {
+    font-size: 0.9rem; /* Smaller testimonial text */
+  }
+
+  .testimonial-image {
+    width: 60px; /* Smaller image size */
+    height: 60px; /* Smaller image size */
+  }
+
+  .testimonial-name {
+    font-size: 0.9rem; /* Smaller name font */
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-section {
+    padding: 30px 15px; /* Even smaller padding */
+  }
+
+  .testimonials-section h2 {
+    font-size: 1.4rem; /* Even smaller title for very small screens */
+  }
+
+  .testimonials-section .mini-heading {
+    font-size: 0.75rem; /* Even smaller mini-heading */
+  }
+
+  .carousel-container {
+    gap: 5px; /* Minimal gap between cards */
+  }
+
+  .testimonial-card {
+    padding: 15px; /* Minimal padding */
+    max-width: 250px; /* Even smaller max-width */
+  }
+
+  .testimonial-text {
+    font-size: 0.8rem; /* Smaller testimonial text */
+  }
+
+  .testimonial-image {
+    width: 50px; /* Even smaller image size */
+    height: 50px; /* Even smaller image size */
+  }
+
+  .testimonial-name {
+    font-size: 0.8rem; /* Even smaller name font */
+  }
+}

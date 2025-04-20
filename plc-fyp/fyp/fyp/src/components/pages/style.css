@@ -1,0 +1,175 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Signup & Signin Container */
+.signup-container,
+.signin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* background-color: #f4f7fc; */
+  padding: 20px;
+}
+
+/* Signup & Signin Form */
+.signup-form-container,
+.signin-form-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Headings */
+.signup-heading,
+.signin-heading {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+/* Form Groups */
+.signup-form,
+.signin-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-input-group,
+.signin-input-group {
+  margin-bottom: 15px;
+}
+
+/* Labels */
+.signup-label,
+.signin-label {
+  font-size: 16px;
+  color: #34495e;
+  margin-bottom: 5px;
+}
+
+/* Input Fields */
+.signup-input,
+.signin-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.signup-input:focus,
+.signin-input:focus {
+  border-color: #3498db;
+}
+
+/* Password Input with Eye Icon */
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.signup-input.password,
+.signin-input.password {
+  padding-right: 40px; /* Space for the eye icon */
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #555;
+}
+
+.password-toggle:hover {
+  color: #000;
+}
+
+/* Buttons */
+.signup-btn,
+.signin-btn {
+  background-color: #6b3910;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signup-btn:hover,
+.signin-btn:hover {
+  background-color: #7e481c;
+}
+
+.signup-btn:disabled,
+.signin-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+/* Error Messages */
+.signup-error,
+.signin-error {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Register/Login Link */
+.register-message {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.register-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .signup-form-container,
+  .signin-form-container {
+    padding: 30px;
+    width: 90%;
+  }
+
+  .signup-heading,
+  .signin-heading {
+    font-size: 20px;
+  }
+
+  .signup-input,
+  .signin-input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .signup-btn,
+  .signin-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

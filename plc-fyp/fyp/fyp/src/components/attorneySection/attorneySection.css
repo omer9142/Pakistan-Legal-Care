@@ -1,0 +1,152 @@
+.attorneys-section {
+  width: 80%;
+  padding: 20px;
+  margin-left: 10%;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+/* Title Styles */
+.attorneys-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Attorneys Container Grid Layout */
+.attorneys-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns by default */
+  gap: 20px;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Paragraph Styles */
+.attorneys-container p {
+  color: rgb(100, 100, 100);
+}
+
+/* Attorney Card Styles */
+.attorney-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Hover Effect for Attorney Card */
+.attorney-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Attorney Image Styles */
+.attorney-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+/* Attorney Name */
+.attorney-card h3 {
+  font-size: 1.25rem;
+  color: #333;
+}
+
+/* Scroll Button and Scroll Up Button */
+.scroll-button, .scroll-up-button {
+  margin-top: 20px;
+  cursor: pointer;
+  animation: bounce 1s infinite;
+}
+
+/* Hover Effect for Buttons */
+.scroll-button:hover, .scroll-up-button:hover {
+  opacity: 0.7;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+/* Center the scroll-up button under the cards */
+.scroll-up-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.scroll-up-button {
+  color: rgb(0, 0, 0);
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .attorneys-container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+  }
+
+  .attorneys-section h2 {
+    font-size: 1.8rem; /* Slightly smaller title */
+  }
+
+  .attorney-card {
+    padding: 12px; /* Reduced padding */
+  }
+
+  .attorney-card h3 {
+    font-size: 1.1rem; /* Slightly smaller text */
+  }
+}
+
+@media (max-width: 768px) {
+  .attorneys-container {
+    grid-template-columns: 1fr; /* Single column for small screens */
+  }
+
+  .attorneys-section h2 {
+    font-size: 1.6rem; /* Smaller title for mobile */
+  }
+
+  .attorney-card {
+    padding: 10px; /* Reduced padding further */
+  }
+
+  .attorney-card h3 {
+    font-size: 1rem; /* Smaller name font */
+  }
+}
+
+@media (max-width: 480px) {
+  .attorneys-section {
+    width: 70%; /* Almost full width for very small screens */
+    padding: 15px; /* Reduced padding */
+  }
+
+  .attorneys-section h2 {
+    font-size: 1.4rem; /* Even smaller title */
+  }
+
+  .attorney-card {
+    padding: 8px; /* Minimal padding */
+  }
+
+  .attorney-card h3 {
+    font-size: 0.9rem; /* Adjusted font size */
+  }
+}

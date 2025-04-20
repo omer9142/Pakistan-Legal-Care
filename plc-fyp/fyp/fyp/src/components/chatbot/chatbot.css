@@ -1,0 +1,26 @@
+.chatbot-section {
+    padding: 2rem;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+}
+
+.chatbot-button {
+    background-color:#6b3910;
+    color: #fff;
+    padding: 1rem 1.75rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease,background-color 0.3s ease-in;
+}
+.chatbot-button:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+    background-color: #7c6243;
+}
