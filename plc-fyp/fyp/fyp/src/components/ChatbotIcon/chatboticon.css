@@ -5,6 +5,14 @@
   z-index: 1000;
 }
 
+.suggest-lawyer-text {
+  color: black;
+}
+
+.suggest-lawyer-btn {
+  color: black;
+}
+
 .chatbot-btn {
   background-color: #6b3910;
   border: none;
@@ -25,6 +33,7 @@
 }
 
 .chatbox {
+  color: black; 
   position: fixed;
   bottom: 80px;
   right: 20px;

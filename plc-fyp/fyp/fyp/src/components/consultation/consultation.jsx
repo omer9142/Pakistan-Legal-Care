@@ -1,9 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './consultation.css';
 import LogoImage from '../../assets/Logo2.png';
 import BackgroundImage from '../../assets/Sixth.jpeg';
 
 const ConsultationForm = () => {
+  const [formData, setFormData] = useState({
+    clientName: '',
+    phone: '',
+    email: '',
+    service: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:5000/request-consultation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          clientName: formData.clientName,
+          phone: formData.phone,
+          service: formData.service,
+          description: formData.message,
+          message: formData.message
+        })
+      });
+
+      if (response.ok) {
+        alert('Your consultation request has been sent successfully!');
+      } else {
+        alert('There was an error submitting your request.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error occurred while submitting the consultation.');
+    }
+  };
+
   return (
     <section
       className="consultation-section"
@@ -19,18 +65,58 @@ const ConsultationForm = () => {
           </p>
         </div>
         <div className="consultation-right">
-          <form className="consultation-form">
-            <input type="text" placeholder="Your Name" required />
-            <input type="tel" placeholder="Your Phone" required />
-            <input type="email" placeholder="Your Email" required />
-            <select required>
+          <form className="consultation-form" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="clientName"
+              placeholder="Your Name"
+              required
+              value={formData.clientName}
+              onChange={handleChange}
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Your Phone"
+              required
+              value={formData.phone}
+              onChange={handleChange}
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <select
+              name="service"
+              required
+              value={formData.service}
+              onChange={handleChange}
+            >
               <option value="">Select Service</option>
               <option value="civil-law">Civil Law</option>
               <option value="criminal-law">Criminal Law</option>
               <option value="family-law">Family Law</option>
             </select>
-            <input type="text" placeholder="Subject" required />
-            <textarea placeholder="Message" rows="4" required></textarea>
+            <input
+              type="text"
+              name="subject"
+              placeholder="Subject"
+              required
+              value={formData.subject}
+              onChange={handleChange}
+            />
+            <textarea
+              name="message"
+              placeholder="Message"
+              rows="4"
+              required
+              value={formData.message}
+              onChange={handleChange}
+            ></textarea>
             <button type="submit">Request Consultation</button>
           </form>
         </div>

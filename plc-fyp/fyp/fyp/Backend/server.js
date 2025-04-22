@@ -198,17 +198,17 @@ app.get("/profile", (req, res) => {
 });
 const updateUser = (email, username) => {
     return new Promise((resolve, reject) => {
-      const userUpdateQuery = "UPDATE users SET username = ? WHERE email = ?";
-      connection.query(userUpdateQuery, [username, email], (err, results) => {
-        if (err) {
-          reject("Failed to update user in the database");
-        } else {
-          resolve("User updated successfully");
-        }
-      });
+        const userUpdateQuery = "UPDATE users SET username = ? WHERE email = ?";
+        connection.query(userUpdateQuery, [username, email], (err, results) => {
+            if (err) {
+                reject("Failed to update user in the database");
+            } else {
+                resolve("User updated successfully");
+            }
+        });
     });
-  };
-  
+};
+
 app.post("/verify-password", (req, res) => {
     const { email, password } = req.body;
 
@@ -400,6 +400,7 @@ app.put('/update-request-status/:id', (req, res) => {
 
         const getUserSql = 'SELECT email FROM users WHERE username = ?';
 
+        console.log("clientName", clientName)
         connection.query(getUserSql, [clientName], (err, userResult) => {
             if (err || userResult.length === 0) {
                 console.error('Error fetching user info:', err);
@@ -512,4 +513,61 @@ app.get("/search-lawyers", (req, res) => {
         console.log(`Found ${results.length} lawyers for area: ${area}`);
         res.json(results);
     });
+});
+
+const transporter1 = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'doe09565@gmail.com',
+        pass: 'your_password',  // Ensure this is securely handled in production
+    }
+});
+
+function sendEmail1(to, subject, htmlContent) {
+    const mailOptions = {
+        from: 'doe09565@gmail.com',
+        to,
+        subject,
+        html: htmlContent,
+    };
+
+    transporter1.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.error('Error sending email:', error);
+        } else {
+            console.log('Email sent: ' + info.response);
+        }
+    });
+}
+
+// Express route to handle case submission
+app.post("/request-consultation", async (req, res) => {
+    try {
+        const { clientName, phone, message } = req.body;
+
+        if (!clientName || !phone || !message) {
+            sendEmail1(
+                'm.omer9142@gmail.com',
+                'New Query Added - Kindly have a look',
+                `
+                <p>Dear Admin,</p>
+                <p>A new query has been added by the user</p>
+                <p><strong>User name:</strong> ${clientName}</p>
+                <p><strong>Phone:</strong> ${phone}</p>
+                <p><strong>Service:</strong> ${service}</p>
+                <p><strong>Message:</strong> ${message}</p>
+                <p>Best regards,<br>The System Team</p>
+                `
+            );
+
+            // Log that the email has been sent
+            console.log(`Email sent to m.omer9142@gmail.com for new query from ${clientName}`);
+        }
+
+        res.status(200).json({ message: "Query submitted successfully!" });
+
+    } catch (error) {
+        console.error("Error submitting case:", error);
+        res.status(500).json({ message: "Failed to submit case", error: error.message });
+    }
 });
