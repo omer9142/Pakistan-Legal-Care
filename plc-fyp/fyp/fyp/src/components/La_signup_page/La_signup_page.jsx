@@ -205,18 +205,17 @@ export default function LaSignupPage() {
             onClick={handleSubmit}
             style={{
               width: "100%",
-              padding: "12px",
-              backgroundColor: "#4CAF50",
+              padding: "10px",
+              backgroundColor: "#8b5e34",
               color: "white",
               border: "none",
-              borderRadius: "4px",
+              borderRadius: "5px",
               cursor: "pointer",
-              fontSize: "16px",
-              marginTop: "20px",
             }}
           >
             Register
           </button>
+
 
           {message && (
             <div className={`message-box ${messageType}`}>

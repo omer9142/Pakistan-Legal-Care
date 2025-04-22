@@ -33,7 +33,8 @@
 .signup-button {
   width: 100%;
   padding: 10px;
-  background-color: #8b5e34; /* Match your site's theme */
+  background-color: #8b5e34;
+  /* Match your site's theme */
   color: white;
   border: none;
   border-radius: 5px;
@@ -41,16 +42,18 @@
 }
 
 .signup-button:hover {
-  background-color: #6d4c2f;
+  background-color: #784013 !important;
 }
 
 .signup-title {
-  text-align: center; /* Center the heading */
+  text-align: center;
+  /* Center the heading */
   margin-bottom: 20px;
 }
 
 .remove-button {
-  background-color: #d9534f; /* Bootstrap red */
+  background-color: #d9534f;
+  /* Bootstrap red */
   color: white;
   border: none;
   padding: 5px 10px;

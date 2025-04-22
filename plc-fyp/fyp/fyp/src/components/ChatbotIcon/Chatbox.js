@@ -3,25 +3,25 @@ import './chatboticon.css';
 import { useNavigate } from "react-router-dom";
 
 const staticResponses = {
-  "What power does the Environmental Protection Act 1997 provide?": {
-    answer: "It empowers authorities to regulate and control industrial emissions and waste.",
-    context: "The Pakistan Environmental Protection Act 1997 empowers authorities to regulate and control industrial emissions and waste.",
-    tag: "Environmental Law",
+  "Is court marriage legal in Pakistan?": {
+    answer: "Yes, court marriage is legal in Pakistan. Both parties must be adults (18+), and it is registered under the Muslim Family Laws Ordinance.",
+    context: "In Pakistan, court marriage is legal under the Muslim Family Laws Ordinance. Both parties must be adults (18+) to marry legally.",
+    tag: "Family Law",
   },
-  "What is the punishment for theft under Pakistan Penal Code?": {
-    answer: "The punishment for theft under section 378 and 379 of PPC is imprisonment and/or fine.",
-    context: "Under the Pakistan Penal Code, theft is a punishable offense detailed in sections 378 and 379.",
-    tag: "Criminal Law",
-  }
+  "What are the legal rights of daughters in property after father's death?": {
+    answer: "Under Islamic inheritance law in Pakistan, daughters are entitled to inherit property from their father's estate. They receive half the share of a son.",
+    context: "Under Islamic inheritance law, daughters in Pakistan are entitled to inherit from their father's estate, receiving half the share of a son.",
+    tag: "Inheritance Law",
+  },
 };
 
 const Chatbox = () => {
- const [messages, setMessages] = useState([
-  {
-    sender: 'bot',
-    text: "I’m from Pakistan Legal Care.\nI’m here to Help you."
-  }
-]);
+  const [messages, setMessages] = useState([
+    {
+      sender: 'bot',
+      text: "I’m from Pakistan Legal Care.\nI’m here to Help you."
+    }
+  ]);
 
   const [input, setInput] = useState('');
   const [showLawyerPopup, setShowLawyerPopup] = useState(false);
