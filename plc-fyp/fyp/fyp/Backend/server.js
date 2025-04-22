@@ -515,57 +515,27 @@ app.get("/search-lawyers", (req, res) => {
     });
 });
 
-const transporter1 = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'doe09565@gmail.com',
-        pass: 'your_password',  // Ensure this is securely handled in production
-    }
-});
-
-function sendEmail1(to, subject, htmlContent) {
-    const mailOptions = {
-        from: 'doe09565@gmail.com',
-        to,
-        subject,
-        html: htmlContent,
-    };
-
-    transporter1.sendMail(mailOptions, function (error, info) {
-        if (error) {
-            console.error('Error sending email:', error);
-        } else {
-            console.log('Email sent: ' + info.response);
-        }
-    });
-}
-
 // Express route to handle case submission
 app.post("/request-consultation", async (req, res) => {
     try {
-        const { clientName, phone, message } = req.body;
+        console.log("heyyyyy", req.body)
+        const { clientName, phone, service, subject, message } = req.body;
 
-        if (!clientName || !phone || !message) {
-            sendEmail1(
-                'm.omer9142@gmail.com',
-                'New Query Added - Kindly have a look',
-                `
+        sendEmail(
+            'm.omer9142@gmail.com',
+            'New Query Added - Kindly have a look',
+            `
                 <p>Dear Admin,</p>
                 <p>A new query has been added by the user</p>
                 <p><strong>User name:</strong> ${clientName}</p>
                 <p><strong>Phone:</strong> ${phone}</p>
                 <p><strong>Service:</strong> ${service}</p>
+                <p><strong>Subject:</strong> ${subject}</p>
                 <p><strong>Message:</strong> ${message}</p>
-                <p>Best regards,<br>The System Team</p>
+                <p>Best regards,<br>The Pakistan Legal Care Team</p>
                 `
-            );
-
-            // Log that the email has been sent
-            console.log(`Email sent to m.omer9142@gmail.com for new query from ${clientName}`);
-        }
-
-        res.status(200).json({ message: "Query submitted successfully!" });
-
+        );
+        console.log(`Email sent to m.omer9142@gmail.com for new query from ${clientName}`);
     } catch (error) {
         console.error("Error submitting case:", error);
         res.status(500).json({ message: "Failed to submit case", error: error.message });

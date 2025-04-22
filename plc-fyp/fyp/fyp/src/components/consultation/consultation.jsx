@@ -34,6 +34,7 @@ const ConsultationForm = () => {
           clientName: formData.clientName,
           phone: formData.phone,
           service: formData.service,
+          subject: formData.subject,
           description: formData.message,
           message: formData.message
         })
