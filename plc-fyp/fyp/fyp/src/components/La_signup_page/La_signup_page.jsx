@@ -13,6 +13,7 @@ export default function LaSignupPage() {
   const [experience, setExperience] = useState("");
   const [about, setAbout] = useState("");
   const [licenseNo, setLicenseNo] = useState("");
+  const [specialization, setSpecialization] = useState("");
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState("");
 
@@ -54,8 +55,8 @@ export default function LaSignupPage() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (!phone || !city || !experience || !about || !licenseNo || !selectedFile || !profilePicture) {
-      setMessage("Please fill in all fields and upload your license card and profile picture.");
+    if (!phone || !city || !experience || !about || !licenseNo || !selectedFile || !profilePicture || !specialization) {
+      setMessage("Please fill in all fields and upload your license card, profile picture, and select specialization.");
       setMessageType("error");
       return;
     }
@@ -68,6 +69,7 @@ export default function LaSignupPage() {
     formData.append("experience", experience);
     formData.append("about", about);
     formData.append("license_no", licenseNo);
+    formData.append("specialization", specialization);
     formData.append("license_card", selectedFile);
     formData.append("profile_picture", profilePicture);
 
@@ -78,7 +80,10 @@ export default function LaSignupPage() {
 
       setMessage("Registration successful!");
       setMessageType("success");
-      window.location.reload();
+
+      setTimeout(() => {
+        window.location.href = "http://localhost:3000/";
+      }, 2000);
     } catch (error) {
       console.error("Error submitting form:", error);
       setMessage("Failed to submit the form.");
@@ -99,26 +104,23 @@ export default function LaSignupPage() {
         justifyContent: "center",
       }}
     >
-      <div className="signup-container" style={{
-        width: "100%",
-        maxWidth: "800px",
-        margin: "0 auto"
-      }}>
-        <div className="signup-box" style={{
-          backgroundColor: "rgba(255, 255, 255, 0.95)", 
-          borderRadius: "10px",
-          padding: "30px",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-          width: "100%",
-          maxHeight: "90vh",
-          overflowY: "auto",
-          marginTop: "20px" 
-        }}>
-          <h2 className="signup-title" style={{
-            textAlign: "center",
-            marginBottom: "20px",
-            color: "#333"
-          }}>LAWYER REGISTRATION FORM</h2>
+      <div className="signup-container" style={{ width: "100%", maxWidth: "800px", margin: "0 auto" }}>
+        <div
+          className="signup-box"
+          style={{
+            backgroundColor: "rgba(255, 255, 255, 0.95)",
+            borderRadius: "10px",
+            padding: "30px",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+            width: "100%",
+            maxHeight: "90vh",
+            overflowY: "auto",
+            marginTop: "20px",
+          }}
+        >
+          <h2 className="signup-title" style={{ textAlign: "center", marginBottom: "20px", color: "#333" }}>
+            LAWYER REGISTRATION FORM
+          </h2>
 
           <div className="signup-group">
             <label>Full Name</label>
@@ -153,6 +155,23 @@ export default function LaSignupPage() {
           <div className="signup-group">
             <label>License Number</label>
             <input type="text" className="signup-input" value={licenseNo} onChange={(e) => setLicenseNo(e.target.value)} />
+          </div>
+
+          <div className="signup-group">
+            <label>Specialization</label>
+            <select className="signup-input" value={specialization} onChange={(e) => setSpecialization(e.target.value)}>
+              <option value="">Select Specialization</option>
+              <option value="Family Law">Family Law</option>
+              <option value="Islamic Law">Islamic Law</option>
+              <option value="Criminal Law">Criminal Law</option>
+              <option value="Texation Law">Texation Law</option>
+              <option value="Traffic Law">Traffic Law</option>
+              <option value="Consumer Protection Law">Consumer Protection Law</option>
+              <option value="Cyber Law">Cyber Law</option>
+              <option value="Environmental Law">Environmental Law</option>
+              <option value="Labor Law">Labor Law</option>
+              <option value="Constitutional Law">Constitutional Law</option>
+            </select>
           </div>
 
           <div className="signup-group">
@@ -193,7 +212,7 @@ export default function LaSignupPage() {
               borderRadius: "4px",
               cursor: "pointer",
               fontSize: "16px",
-              marginTop: "20px"
+              marginTop: "20px",
             }}
           >
             Register

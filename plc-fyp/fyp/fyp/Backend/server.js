@@ -159,7 +159,6 @@ app.get("/user/role", (req, res) => {
         });
     });
 });
-
 //Edit profile 
 app.get("/profile", (req, res) => {
     const token = req.headers.authorization?.split(" ")[1];
@@ -197,6 +196,19 @@ app.get("/profile", (req, res) => {
         });
     });
 });
+const updateUser = (email, username) => {
+    return new Promise((resolve, reject) => {
+      const userUpdateQuery = "UPDATE users SET username = ? WHERE email = ?";
+      connection.query(userUpdateQuery, [username, email], (err, results) => {
+        if (err) {
+          reject("Failed to update user in the database");
+        } else {
+          resolve("User updated successfully");
+        }
+      });
+    });
+  };
+  
 app.post("/verify-password", (req, res) => {
     const { email, password } = req.body;
 

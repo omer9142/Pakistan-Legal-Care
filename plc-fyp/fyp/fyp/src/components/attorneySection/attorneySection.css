@@ -59,42 +59,6 @@
   color: #333;
 }
 
-/* Scroll Button and Scroll Up Button */
-.scroll-button, .scroll-up-button {
-  margin-top: 20px;
-  cursor: pointer;
-  animation: bounce 1s infinite;
-}
-
-/* Hover Effect for Buttons */
-.scroll-button:hover, .scroll-up-button:hover {
-  opacity: 0.7;
-}
-
-/* Bounce Animation */
-@keyframes bounce {
-  0%, 100% {
-      transform: translateY(0);
-  }
-  50% {
-      transform: translateY(-10px);
-  }
-}
-
-/* Center the scroll-up button under the cards */
-.scroll-up-button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.scroll-up-button {
-  color: rgb(0, 0, 0);
-  border-radius: 50%;
-  padding: 10px;
-  cursor: pointer;
-}
-
 /* Responsiveness */
 @media (max-width: 1024px) {
   .attorneys-container {

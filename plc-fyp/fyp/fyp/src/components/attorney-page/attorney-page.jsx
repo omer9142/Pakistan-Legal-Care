@@ -8,6 +8,7 @@ const AttorneysSection = () => {
     const [attorneys, setAttorneys] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedCity, setSelectedCity] = useState("");
+    const [selectedSpecialization, setSelectedSpecialization] = useState(""); // 🆕
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -19,13 +20,14 @@ const AttorneysSection = () => {
     const filteredAttorneys = attorneys.filter((attorney) => {
         return (
             attorney.username.toLowerCase().includes(searchQuery.toLowerCase()) &&
-            (selectedCity === "" || attorney.city === selectedCity)
+            (selectedCity === "" || attorney.city === selectedCity) &&
+            (selectedSpecialization === "" || attorney.specialization === selectedSpecialization) // 🆕
         );
     });
+
     const isSingleAttorney = filteredAttorneys.length === 1;
 
     const handleCardClick = (attorneyEmail) => {
-        console.log("Navigating to attorney details with email:", attorneyEmail);
         navigate(`/attorney/${encodeURIComponent(attorneyEmail)}`);
     };
 
@@ -50,9 +52,17 @@ const AttorneysSection = () => {
                         <option key={city} value={city}>{city}</option>
                     ))}
                 </select>
+
+                {/* 🆕 Specialization Dropdown */}
+                <select value={selectedSpecialization} onChange={(e) => setSelectedSpecialization(e.target.value)}>
+                    <option value="">All Specializations</option>
+                    {Array.from(new Set(attorneys.map(a => a.specialization))).map(spec => (
+                        <option key={spec} value={spec}>{spec}</option>
+                    ))}
+                </select>
             </div>
 
-           <div className={`attorneys-container ${isSingleAttorney ? 'single-attorney' : ''}`}>
+            <div className={`attorneys-container ${isSingleAttorney ? 'single-attorney' : ''}`}>
                 {filteredAttorneys.length > 0 ? (
                     filteredAttorneys.map((attorney) => (
                         <div className="attorney-card" key={attorney.email} onClick={() => handleCardClick(attorney.email)}>
@@ -60,6 +70,7 @@ const AttorneysSection = () => {
                             <h3>{attorney.username}</h3>
                             <p>{attorney.about}</p>
                             <p><strong>City:</strong> {attorney.city}</p>
+                            <p><strong>Specialization:</strong> {attorney.specialization}</p> {/* 🆕 */}
                         </div>
                     ))
                 ) : (
