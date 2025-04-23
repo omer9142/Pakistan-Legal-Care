@@ -77,6 +77,8 @@
 
 .chat-msg.bot {
   background-color: #f1f1f1;
+  align-self: flex-start; 
+  text-align: left;      
 }
 
 .chatbox-input {

@@ -12,6 +12,10 @@
     gap: 60px;
 }
 
+.success-message {
+    color: #604B33;
+  }
+
 .attorney-image {
     flex: 1;
     text-align: center;

@@ -13,6 +13,8 @@ const ConsultationForm = () => {
     message: ''
   });
 
+  const [successMessage, setSuccessMessage] = useState('');
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -41,7 +43,18 @@ const ConsultationForm = () => {
       });
 
       if (response.ok) {
-        alert('Your consultation request has been sent successfully!');
+        setSuccessMessage("Thanks for contacting Pakistan Legal. We will review your request and get back to you.");
+        setFormData({
+          clientName: '',
+          phone: '',
+          email: '',
+          service: '',
+          subject: '',
+          message: ''
+        });
+
+        // Clear success message after 5 seconds
+        setTimeout(() => setSuccessMessage(''), 5000);
       } else {
         alert('There was an error submitting your request.');
       }
@@ -119,6 +132,9 @@ const ConsultationForm = () => {
               onChange={handleChange}
             ></textarea>
             <button type="submit">Request Consultation</button>
+
+            <p style={{ color: '#604B33', marginTop: '10px' }}>{successMessage}</p>
+
           </form>
         </div>
       </div>

@@ -123,7 +123,6 @@ const Chatbox = () => {
             <div ref={messagesEndRef} />
           </div>
 
-
           <div className="chatbox-input">
             <input
               type="text"

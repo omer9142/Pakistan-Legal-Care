@@ -88,7 +88,7 @@ const AttorneyDetail = () => {
                         <form onSubmit={handleSubmit}>
                             <input type="text" name="fullName" placeholder="Full Name" value={formData.fullName} onChange={handleInputChange} required />
                             <input type="text" name="city" placeholder="Your City" value={formData.city} onChange={handleInputChange} required />
-                            
+
                             <select name="caseCategory" value={formData.caseCategory} onChange={handleInputChange} required>
                                 <option value="">Select Case Category</option>
                                 <option value="Criminal Law">Criminal Law</option>
@@ -97,27 +97,31 @@ const AttorneyDetail = () => {
                                 <option value="Immigration Law">Immigration Law</option>
                             </select>
 
-                            <input 
-                                type="text" 
-                                name="shortSummary" 
-                                placeholder="Short Summary (Max 50 characters)" 
-                                maxLength="50" 
+                            <input
+                                type="text"
+                                name="shortSummary"
+                                placeholder="Short Summary (Max 50 characters)"
+                                maxLength="50"
                                 value={formData.shortSummary}
-                                onChange={handleInputChange} 
-                                required 
+                                onChange={handleInputChange}
+                                required
                             />
 
                             <textarea name="detailSummary" placeholder="Detailed Summary" rows="4" value={formData.detailSummary} onChange={handleInputChange} required></textarea>
-                            
+
                             <button type="submit">Submit</button>
                         </form>
 
-                        {successMessage && <p className="success-message">{successMessage}</p>}
+                        {successMessage && (
+                            <p className="success-message" style={{ color: '#604B33' }}>
+                                {successMessage}
+                            </p>
+                        )}
                     </div>
                 </div>
             )}
         </div>
-    ); 
+    );
 };
 
 export default AttorneyDetail;
